@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Animal List">
+        <template if:true={animals}>
+            <ul class="slds-p-around_medium">
+                <div class="slds-grid slds-gutters">
+                    <template for:each={animals} for:item="animal" for:index="index">
+                        <div key={animal} class="grid-item slds-p-around_small">
+                            <img style="max-height: 100px" alt="animal logo" src={animalLogo}/>
+                            <div class="slds-align_absolute-center">{animal}</div>
+                        </div>
+                        <!-- <div key={animal}>{animal}</div>
+                        <img key={animal} style="max-height: 200px" alt="animal logo" src={animalLogo}/> -->
+                    </template>
+                </div>
+            </ul>
+        </template>
+        <template if:true={error}>
+            <div>{error}</div>
+        </template>
+
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Enter Animal Name" onchange={handleInputChange}></lightning-input>
+        </div>
+        <lightning-button label="Add Animal" title="Non-primary action" onclick={addAnimal} class="slds-p-left_medium"></lightning-button>
+    </lightning-card>
+</template>

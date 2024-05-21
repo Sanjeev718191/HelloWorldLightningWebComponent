@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Weather APIs">
+        <div class="slds-var-m-around_medium">
+            <div class="video-container">
+                <video id="myVideo" width="400" controls autoplay>
+                    <source src="/resource/WeatherVid" type="video/mp4"/>
+                </video>
+            </div>
+            <lightning-input onchange={handleonchange} label="Search City"></lightning-input>
+            <br/>
+            <lightning-button label="Get Weather" onclick={buttonClick}></lightning-button>
+            <br/>
+            <img src={imageURL} />
+            <b>{condition}</b>
+            <div>{temp} </div>
+            <div>{windSpeed} </div>
+        </div>
+    </lightning-card>
+</template>
